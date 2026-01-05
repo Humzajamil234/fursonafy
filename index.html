@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURSONAFY - Professional Fursuit Makers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF4D8D;
+            --secondary: #6C63FF;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* Header - EXACT LIKE SCREENSHOT */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* NAVIGATION - EXACT LIKE SCREENSHOT */
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* CTA Button */
+        .nav-cta {
+            display: flex;
+            align-items: center;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), #FF6B9D);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
+                        url('https://images.unsplash.com/photo-1559628129-67cf63b72248?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-tagline {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .main-cta {
+            background: linear-gradient(135deg, var(--primary), #FF6B9D);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .main-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 77, 141, 0.4);
+        }
+
+        /* Want Something Different Section - fursuphy 3.png */
+        .something-different {
+            background: var(--light);
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        /* How it Works Section - fursuphy 4.png */
+        .how-it-works {
+            background: white;
+            text-align: center;
+        }
+
+        .trustpilot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            font-size: 20px;
+            color: var(--dark);
+        }
+
+        .trustpilot i {
+            color: #00B67A;
+            font-size: 24px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), #FF6B9D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Pricing Menu Section - pic1.png */
+        .pricing-menu {
+            background: var(--light);
+        }
+
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .price-tab {
+            background: white;
+            padding: 15px 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .price-tab.active {
+            background: linear-gradient(135deg, var(--primary), #FF6B9D);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .pricing-content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .price-heading {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .price-description {
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .price-tag {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .features-list i {
+            color: var(--primary);
+        }
+
+        /* Latest Posts Section - fursuphy 7.png */
+        .latest-posts {
+            background: white;
+        }
+
+        .posts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .posts-header h2 {
+            font-size: 42px;
+            color: var(--dark);
+        }
+
+        .blog-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .post-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .post-card:hover .post-image img {
+            transform: scale(1.05);
+        }
+
+        .post-content {
+            padding: 30px;
+        }
+
+        .post-date {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .post-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .post-excerpt {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Start Commission Section - fursuphy 5.png */
+        .start-commission {
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            color: white;
+            text-align: center;
+        }
+
+        .start-commission h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .start-commission p {
+            font-size: 20px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-preview {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .faq-preview h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .faq-item p {
+            color: #b0b0b0;
+            font-size: 16px;
+        }
+
+        /* Contact Section - fursuphy 8.png & fursuphy 9.png */
+        .contact-section {
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail i {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-detail h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-detail p {
+            color: var(--gray);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), #FF6B9D);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 77, 141, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-description {
+            color: #aaa;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .discord-join {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #5865F2;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .discord-join:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-main {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero-tagline {
+                font-size: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .posts-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .main-cta {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+            
+            .pricing-content {
+                padding: 30px;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                FURSONA<span>FY</span>
+            </a>
+            
+            <!-- EXACT Navigation from screenshot -->
+            <div class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#quiz">Furry & Fursona Quiz</a></li>
+                    <li><a href="#generator">Fursona Name Generator</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#quote" class="cta-button">BUILD MY FURSUIT</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Fursuit Makers<br>Bringing Your <span>Fursona</span> to Life</h1>
+                <p class="hero-tagline">
+                    Looking for a reliable fursuit maker to transform your original character design into a high-quality fursuit? 
+                    Our skilled team at Fursonafy builds custom fursuits from head to tail, tailored exactly to your reference sheet. 
+                    No stress, no hassle, just great craftsmanship.
+                </p>
+                <a href="#quote" class="main-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Want Something Different Section -->
+    <section class="something-different" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>WANT SOMETHING DIFFERENT?</h2>
+                <p>Our previous fursuit commissions</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1593081891731-fda0877988da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fursuit Example">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Arctic Wolf Fullsuit</h3>
+                        <p>Complete custom fursuit with realistic markings</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1573512443303-12f7d1c88f4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fursuit Example">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dragon Character</h3>
+                        <p>Mythical creature with wings and scales</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fursuit Example">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fox Partial</h3>
+                        <p>Head, paws, and tail set</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works" id="process">
+        <div class="container">
+            <div class="trustpilot">
+                <i class="fas fa-star"></i>
+                <span>Review us on Trustpilot</span>
+            </div>
+            
+            <div class="section-title">
+                <h2>How it works</h2>
+                <p>4 simple steps to get your custom fursuit</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Add details</h3>
+                    <p>Tell our fursuit makers everything about your fursuit eg. species, fur color, patterns</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get a quote</h3>
+                    <p>We give you an exact cost for the suit as well as the size of the deposit</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Build your fursuit</h3>
+                    <p>Once you reach the front of the queue we begin to build your fursuit</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy your fursuit</h3>
+                    <p>We complete your suit and ship it to you ASAP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Menu Section -->
+    <section class="pricing-menu" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fursuit Pricing Menu</h2>
+                <p>Choose from our range of fursuit components</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <button class="price-tab active" data-tab="head">HEADS</button>
+                <button class="price-tab" data-tab="paws">PAWS</button>
+                <button class="price-tab" data-tab="bodysuit">BODYSUIT</button>
+                <button class="price-tab" data-tab="tails">TAILS</button>
+            </div>
+            
+            <div class="pricing-content" id="head-content">
+                <h2 class="price-heading">Head</h2>
+                <p class="price-description">
+                    Our heads are initially constructed from a 3D printed outline that is designed according to your reference sheet in 3D modeling software. 
+                    We find that this makes it a lot easier to build up the foam foundation more accurately rather than starting from scratch with the foam.
+                    The usual features of our fursuit heads include hair, tongues, follow-me eyes, teeth, and ears. Of course, we have a lot more available 
+                    listed on the right and if you'd like something more than what is listed here feel free to ask!
+                </p>
+                
+                <div class="price-tag">$1000+<span style="font-size: 18px; color: var(--gray); margin-left: 10px;">Starting price</span></div>
+                
+                <h3 style="margin-bottom: 20px; color: var(--dark);">What we can do:</h3>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Complete head of hair (Mohawks, Bushy, Ponytails, Bangs)</li>
+                    <li><i class="fas fa-check"></i> Facial Piercings</li>
+                    <li><i class="fas fa-check"></i> Tongues & Teeth</li>
+                    <li><i class="fas fa-check"></i> Horns, Antlers, Spikes</li>
+                    <li><i class="fas fa-check"></i> Glasses</li>
+                    <li><i class="fas fa-check"></i> All different shapes and sizes of ears</li>
+                    <li><i class="fas fa-check"></i> Removable eyelids</li>
+                </ul>
+                
+                <a href="#quote" class="cta-button" style="padding: 18px 40px; font-size: 16px;">GET A QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section -->
+    <section class="latest-posts" id="blogs">
+        <div class="container">
+            <div class="posts-header">
+                <h2>Latest posts</h2>
+                <a href="#" class="blog-link">GO TO BLOG <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="posts-grid">
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1593081891731-fda0877988da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">Oct 24, 2023</div>
+                        <h3>What is the Furry Fandom? Everything You Need to Know</h3>
+                        <p class="post-excerpt">
+                            Drawing fursonas can be a fun, creative way to express yourself, but it can also feel overwhelming for beginners.
+                        </p>
+                        
+                        <div class="post-author">
+                            <div class="author-avatar">XR</div>
+                            <div class="author-info">
+                                <h4>Xegs (Relin)</h4>
+                                <p>Writer</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1573512443303-12f7d1c88f4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">Oct 1, 2023</div>
+                        <h3>How To Draw Furry Poses and Proportions: A Complete Guide</h3>
+                        <p class="post-excerpt">
+                            Drawing fursonas can be a fun, creative way to express yourself, but it can also feel overwhelming for beginners.
+                        </p>
+                        
+                        <div class="post-author">
+                            <div class="author-avatar">XR</div>
+                            <div class="author-info">
+                                <h4>Xegs (Relin)</h4>
+                                <p>Writer</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">Sep 23, 2023</div>
+                        <h3>Furry Art Bases: What They Are, Why They Matter...</h3>
+                        <p class="post-excerpt">
+                            For many in the furry community, creating a unique fursona is a deeply personal and creative journey.
+                        </p>
+                        
+                        <div class="post-author">
+                            <div class="author-avatar">XR</div>
+                            <div class="author-info">
+                                <h4>Xegs (Relin)</h4>
+                                <p>Writer</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Commission Section -->
+    <section class="start-commission" id="quote">
+        <div class="container">
+            <h2>Start your fursuit<br>commission today</h2>
+            <p>Build your dream fursuit with our expert team of makers</p>
+            <a href="#contact" class="main-cta">BUILD MY FURSUIT</a>
+            
+            <div class="faq-preview">
+                <h3>FAQ</h3>
+                <p style="color: #b0b0b0; margin-bottom: 30px;">Some questions we often get asked</p>
+                
+                <div class="faq-item">
+                    <h4>How long does a fursuit commission take?</h4>
+                    <p>Typically 3-6 months depending on complexity and current queue length.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do you offer payment plans?</h4>
+                    <p>Yes, we offer flexible payment plans to make commissioning easier.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Do you ship internationally?</h4>
+                    <p>Yes, we ship worldwide with secure packaging and tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact us</h2>
+                    <p>For any inquiries about our work, contact us here or through our email address.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>624 Boston Ave, Tulsa, OK, 74119, USA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@fursonafy.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 20px; color: var(--dark);">Social</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Contact Form</h2>
+                    <form id="contactForm">
+                        <div class="form-group form-row">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">FURSONA<span>FY</span></div>
+                    <p class="footer-description">
+                        Professional fursuit makers bringing your characters to life with quality craftsmanship 
+                        and attention to detail since 2015.
+                    </p>
+                    <a href="#" class="discord-join">
+                        <i class="fab fa-discord"></i> Join our Discord
+                    </a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Fursonas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Character Design</a></li>
+                        <li><a href="#">Reference Sheets</a></li>
+                        <li><a href="#">Fursona Creation</a></li>
+                        <li><a href="#">Art Commissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Fursuits</h3>
+                    <ul class="footer-links">
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">How It Works</a></li>
+                        <li><a href="#quote">Get a Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refunds & Returns Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 FURSONAFY. All rights reserved. | Professional Fursuit Makers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMain = document.querySelector('.nav-main');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isVisible = navMain.style.display === 'flex';
+            
+            if (isVisible) {
+                navMain.style.display = 'none';
+            } else {
+                navMain.style.display = 'flex';
+                navMain.style.flexDirection = 'column';
+                navMain.style.position = 'absolute';
+                navMain.style.top = '70px';
+                navMain.style.left = '0';
+                navMain.style.width = '100%';
+                navMain.style.backgroundColor = '#1a1a2e';
+                navMain.style.padding = '30px 20px';
+                navMain.style.gap = '25px';
+                navMain.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+                navMain.style.borderTop = '3px solid var(--primary)';
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navMain.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Pricing tabs
+        const priceTabs = document.querySelectorAll('.price-tab');
+        const headContent = document.getElementById('head-content');
+        
+        priceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                priceTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Change content based on tab
+                const tabType = tab.getAttribute('data-tab');
+                const priceTag = headContent.querySelector('.price-tag');
+                const heading = headContent.querySelector('.price-heading');
+                const description = headContent.querySelector('.price-description');
+                const featuresList = headContent.querySelector('.features-list');
+                
+                switch(tabType) {
+                    case 'head':
+                        heading.textContent = 'Head';
+                        description.textContent = 'Our heads are initially constructed from a 3D printed outline that is designed according to your reference sheet in 3D modeling software. We find that this makes it a lot easier to build up the foam foundation more accurately rather than starting from scratch with the foam. The usual features of our fursuit heads include hair, tongues, follow-me eyes, teeth, and ears.';
+                        priceTag.innerHTML = '$1000+<span style="font-size: 18px; color: var(--gray); margin-left: 10px;">Starting price</span>';
+                        featuresList.innerHTML = `
+                            <li><i class="fas fa-check"></i> Complete head of hair (Mohawks, Bushy, Ponytails, Bangs)</li>
+                            <li><i class="fas fa-check"></i> Facial Piercings</li>
+                            <li><i class="fas fa-check"></i> Tongues & Teeth</li>
+                            <li><i class="fas fa-check"></i> Horns, Antlers, Spikes</li>
+                            <li><i class="fas fa-check"></i> Glasses</li>
+                            <li><i class="fas fa-check"></i> All different shapes and sizes of ears</li>
+                            <li><i class="fas fa-check"></i> Removable eyelids</li>
+                        `;
+                        break;
+                        
+                    case 'paws':
+                        heading.textContent = 'Paws';
+                        description.textContent = 'Our custom paws are handcrafted with attention to detail and comfort. Made with premium faux fur and durable materials, they provide both style and functionality for your fursuit. We offer various styles including digigrade, plantigrade, and handpaws.';
+                        priceTag.innerHTML = '$300+<span style="font-size: 18px; color: var(--gray); margin-left: 10px;">Per pair</span>';
+                        featuresList.innerHTML = `
+                            <li><i class="fas fa-check"></i> Custom paw pads</li>
+                            <li><i class="fas fa-check"></i> Claws or nails</li>
+                            <li><i class="fas fa-check"></i> Articulated fingers</li>
+                            <li><i class="fas fa-check"></i> Ventilation for comfort</li>
+                            <li><i class="fas fa-check"></i> Durable construction</li>
+                            <li><i class="fas fa-check"></i> Various fur types available</li>
+                            <li><i class="fas fa-check"></i> Matching arm sleeves</li>
+                        `;
+                        break;
+                        
+                    case 'bodysuit':
+                        heading.textContent = 'Bodysuit';
+                        description.textContent = 'Our full body fursuits are tailored to your exact measurements for the perfect fit. We use high-quality materials and construction techniques to ensure durability and comfort for extended wear. Each bodysuit is custom made from your reference sheet.';
+                        priceTag.innerHTML = '$2000+<span style="font-size: 18px; color: var(--gray); margin-left: 10px;">Starting price</span>';
+                        featuresList.innerHTML = `
+                            <li><i class="fas fa-check"></i> Tailored to your measurements</li>
+                            <li><i class="fas fa-check"></i> Full body coverage</li>
+                            <li><i class="fas fa-check"></i> Ventilation system</li>
+                            <li><i class="fas fa-check"></i> Durable zippers and seams</li>
+                            <li><i class="fas fa-check"></i> Padding and shaping</li>
+                            <li><i class="fas fa-check"></i> Matching fur patterns</li>
+                            <li><i class="fas fa-check"></i> Easy to put on and take off</li>
+                        `;
+                        break;
+                        
+                    case 'tails':
+                        heading.textContent = 'Tails';
+                        description.textContent = 'Custom tails that match your fursona perfectly. We create tails of all sizes and shapes, from small and subtle to large and expressive. Each tail is carefully crafted with proper weighting and attachment methods.';
+                        priceTag.innerHTML = '$150+<span style="font-size: 18px; color: var(--gray); margin-left: 10px;">Starting price</span>';
+                        featuresList.innerHTML = `
+                            <li><i class="fas fa-check"></i> Various sizes and lengths</li>
+                            <li><i class="fas fa-check"></i> Proper weighting for natural movement</li>
+                            <li><i class="fas fa-check"></i> Secure attachment methods</li>
+                            <li><i class="fas fa-check"></i> Articulated or static options</li>
+                            <li><i class="fas fa-check"></i> Matching fur patterns</li>
+                            <li><i class="fas fa-check"></i> Custom shapes and styles</li>
+                            <li><i class="fas fa-check"></i> Durable construction</li>
+                        `;
+                        break;
+                }
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+        
+        // Build my fursuit button
+        document.querySelectorAll('.cta-button, .main-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#quote' || this.textContent.includes('BUILD')) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: document.querySelector('#quote').offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        document.querySelectorAll('.portfolio-item, .step, .post-card, .pricing-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            header.style.transition = 'all 0.3s ease';
+        });
+    </script>
+</body>
+</html>
